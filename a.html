@@ -1,0 +1,14 @@
+<html>
+
+<head>
+    <title>Chat-GMICHI</title>
+</head>
+
+<body>
+    <h1>Chat-GMICHI</h1>
+    <p id="response"></p>
+    <input type="text" placeholder="Send a meassage." id="input">
+    <button onclick="this.disabled=true;document.getElementById('response').innerText='生成中...';fetch(`http://133.14.204.103:19474/${document.getElementById('input').value}`).then((response)=>response.text()).then((text)=>{document.getElementById('response').innerText=text;document.getElementById('input').value='';this.disabled=false})">Send</button>
+</body>
+
+</html>
